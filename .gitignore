@@ -47,3 +47,20 @@ hs_err_pid*
 *.out
 *.synctex.gz
 *.pdf
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
