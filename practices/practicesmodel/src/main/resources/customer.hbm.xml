@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping.dtd">
+
+<hibernate-mapping>
+    <class name="it.cdigruttola.practices.model.CustomerModel" table="customers">
+        <id name="pk" type="java.lang.String">
+            <generator class="uuid"/>
+        </id>
+        <property name="name" type="java.lang.String"/>
+        <property name="surname" type="java.lang.String"/>
+        <property name="mail" type="java.lang.String" unique="true"/>
+        <property name="id" type="java.lang.Long" unique="true"/>
+        <property name="taxCode" type="java.lang.String" unique="true" column="tax_code"/>
+        <property name="vatCode" type="java.lang.String" unique="true" column="vat_code"/>
+    </class>
+</hibernate-mapping>
