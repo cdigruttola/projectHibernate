@@ -10,6 +10,6 @@
         <property name="date" type="java.sql.Date"/>
         <property name="text" type="java.lang.String"/>
         <many-to-one name="activity" class="it.cdigruttola.practices.model.ActivityModel"/>
-        <many-to-one name="employee" class="it.cdigruttola.practices.model.EmployeeModel"/>
+        <one-to-one name="employee" class="it.cdigruttola.practices.model.EmployeeModel"/>
     </class>
 </hibernate-mapping>

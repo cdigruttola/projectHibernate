@@ -15,17 +15,5 @@
             <key column="employee"/>
             <one-to-many class="it.cdigruttola.practices.model.PracticeModel"/>
         </set>
-        <set table="activities" name="activities" cascade="all" lazy="false" inverse="true" fetch="join">
-            <key column="employee"/>
-            <one-to-many class="it.cdigruttola.practices.model.ActivityModel"/>
-        </set>
-        <set table="comments" name="comments" cascade="all" lazy="false" inverse="true" fetch="join">
-            <key column="employee"/>
-            <one-to-many class="it.cdigruttola.practices.model.CommentModel"/>
-        </set>
-        <set table="files" name="files" cascade="all" lazy="false" inverse="true" fetch="join">
-            <key column="employee"/>
-            <one-to-many class="it.cdigruttola.practices.model.FileModel"/>
-        </set>
     </class>
 </hibernate-mapping>

@@ -10,9 +10,6 @@ public class EmployeeModel {
     private String mail;
     private boolean admin;
     private Set<PracticeModel> practices;
-    private Set<ActivityModel> activities;
-    private Set<CommentModel> comments;
-    private Set<FileModel> files;
 
     public String getPk() {
         return pk;
@@ -62,27 +59,4 @@ public class EmployeeModel {
         this.practices = practices;
     }
 
-    public Set<ActivityModel> getActivities() {
-        return activities;
-    }
-
-    public void setActivities(Set<ActivityModel> activities) {
-        this.activities = activities;
-    }
-
-    public Set<CommentModel> getComments() {
-        return comments;
-    }
-
-    public void setComments(Set<CommentModel> comments) {
-        this.comments = comments;
-    }
-
-    public Set<FileModel> getFiles() {
-        return files;
-    }
-
-    public void setFiles(Set<FileModel> files) {
-        this.files = files;
-    }
 }
