@@ -10,11 +10,6 @@
     <context:annotation-config/>
     <mvc:annotation-driven/>
 
-    <import resource="practicescore-spring.xml"/>
-
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>
+    <import resource="practicesfacade-spring.xml"/>
 
 </beans>

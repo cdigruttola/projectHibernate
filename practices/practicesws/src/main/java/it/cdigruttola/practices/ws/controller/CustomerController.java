@@ -1,7 +1,7 @@
 package it.cdigruttola.practices.ws.controller;
 
-import it.cdigruttola.practices.core.service.CustomerService;
-import it.cdigruttola.practices.model.CustomerModel;
+import it.cdigruttola.practices.dto.CustomerDTO;
+import it.cdigruttola.practices.facade.CustomerFacade;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +13,11 @@ import javax.annotation.Resource;
 @RequestMapping(value = "customers")
 public class CustomerController {
 
-    @Resource(name = "customerService")
-    private CustomerService customerService;
+    @Resource(name = "customerFacade")
+    private CustomerFacade customerFacade;
 
     @RequestMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public CustomerModel getCustomer(@PathVariable String id) {
-        return customerService.getCustomerByPk(id);
+    public CustomerDTO getCustomer(@PathVariable String id) {
+        return customerFacade.getCustomerById(id);
     }
 }

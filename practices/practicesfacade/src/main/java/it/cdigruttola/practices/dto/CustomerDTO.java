@@ -1,6 +1,6 @@
-package it.cdigruttola.practices.model;
+package it.cdigruttola.practices.dto;
 
-public class CustomerModel {
+public class CustomerDTO {
 
     private String pk;
     private long id;
@@ -72,5 +72,4 @@ public class CustomerModel {
     public void setVatCode(String vatCode) {
         this.vatCode = vatCode;
     }
-
 }
