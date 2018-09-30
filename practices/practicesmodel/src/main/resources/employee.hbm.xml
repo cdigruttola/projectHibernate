@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="it.cdigruttola.practices.model.EmployeeModel" table="employees">
+        <id name="pk" type="java.lang.String">
+            <generator class="uuid"/>
+        </id>
+        <property name="name" type="java.lang.String"/>
+        <property name="surname" type="java.lang.String"/>
+        <property name="mail" type="java.lang.String" unique="true"/>
+        <property name="admin" type="boolean"/>
+        <set table="practices" name="practices" cascade="all" lazy="false" inverse="true" fetch="join">
+            <key column="employee"/>
+            <one-to-many class="it.cdigruttola.practices.model.PracticeModel"/>
+        </set>
+        <set table="activities" name="activities" cascade="all" lazy="false" inverse="true" fetch="join">
+            <key column="employee"/>
+            <one-to-many class="it.cdigruttola.practices.model.ActivityModel"/>
+        </set>
+        <set table="comments" name="comments" cascade="all" lazy="false" inverse="true" fetch="join">
+            <key column="employee"/>
+            <one-to-many class="it.cdigruttola.practices.model.CommentModel"/>
+        </set>
+        <set table="files" name="files" cascade="all" lazy="false" inverse="true" fetch="join">
+            <key column="employee"/>
+            <one-to-many class="it.cdigruttola.practices.model.FileModel"/>
+        </set>
+    </class>
+</hibernate-mapping>

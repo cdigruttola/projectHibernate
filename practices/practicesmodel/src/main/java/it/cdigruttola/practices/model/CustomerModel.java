@@ -1,5 +1,7 @@
 package it.cdigruttola.practices.model;
 
+import java.util.Set;
+
 public class CustomerModel {
 
     private String pk;
@@ -9,7 +11,7 @@ public class CustomerModel {
     private String mail;
     private String taxCode;
     private String vatCode;
-
+    private Set<PracticeModel> practices;
 
     public String getPk() {
         return pk;
@@ -73,4 +75,11 @@ public class CustomerModel {
         this.vatCode = vatCode;
     }
 
+    public Set<PracticeModel> getPractices() {
+        return practices;
+    }
+
+    public void setPractices(Set<PracticeModel> practices) {
+        this.practices = practices;
+    }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="it.cdigruttola.practices.model.FileModel" table="files">
+        <id name="pk" type="java.lang.String">
+            <generator class="uuid"/>
+        </id>
+        <property name="name" type="java.lang.String"/>
+        <property name="url" type="java.lang.String"/>
+        <many-to-one name="practice" class="it.cdigruttola.practices.model.PracticeModel"/>
+        <many-to-one name="employee" class="it.cdigruttola.practices.model.EmployeeModel"/>
+    </class>
+</hibernate-mapping>

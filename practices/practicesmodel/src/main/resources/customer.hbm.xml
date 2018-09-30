@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-mapping.dtd">
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
     <class name="it.cdigruttola.practices.model.CustomerModel" table="customers">
@@ -10,8 +10,12 @@
         <property name="name" type="java.lang.String"/>
         <property name="surname" type="java.lang.String"/>
         <property name="mail" type="java.lang.String" unique="true"/>
-        <property name="id" type="java.lang.Long" unique="true"/>
+        <property name="id" type="long" unique="true"/>
         <property name="taxCode" type="java.lang.String" unique="true" column="tax_code"/>
         <property name="vatCode" type="java.lang.String" unique="true" column="vat_code"/>
+        <set table="practices" name="practices" cascade="all" lazy="false" inverse="true" fetch="join">
+            <key column="customer"/>
+            <one-to-many class="it.cdigruttola.practices.model.PracticeModel"/>
+        </set>
     </class>
 </hibernate-mapping>

@@ -18,6 +18,11 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
         <property name="mappingResources">
             <list>
                 <value>customer.hbm.xml</value>
+                <value>employee.hbm.xml</value>
+                <value>practice.hbm.xml</value>
+                <value>activity.hbm.xml</value>
+                <value>comment.hbm.xml</value>
+                <value>file.hbm.xml</value>
             </list>
         </property>
     </bean>

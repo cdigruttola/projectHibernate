@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="it.cdigruttola.practices.model.ActivityModel" table="activities">
+        <id name="pk" type="java.lang.String">
+            <generator class="uuid"/>
+        </id>
+        <property name="description" type="java.lang.String"/>
+        <many-to-one name="practice" class="it.cdigruttola.practices.model.PracticeModel"/>
+        <many-to-one name="employee" class="it.cdigruttola.practices.model.EmployeeModel"/>
+        <property name="openDate" type="java.sql.Date" column="open_date"/>
+        <property name="dueDate" type="java.sql.Date" column="due_date"/>
+        <property name="endDate" type="java.sql.Date" column="end_date"/>
+        <property name="closureDate" type="java.sql.Date" column="closure_date"/>
+        <property name="workingHours" type="long" column="working_hours"/>
+        <property name="km" type="long"/>
+        <set table="comments" name="comments" cascade="all" lazy="false" inverse="true" fetch="join">
+            <key column="activity"/>
+            <one-to-many class="it.cdigruttola.practices.model.CommentModel"/>
+        </set>
+    </class>
+</hibernate-mapping>
