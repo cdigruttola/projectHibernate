@@ -2,15 +2,13 @@ package it.cdigruttola.practices.dto;
 
 import java.util.Set;
 
-public class CustomerDTO {
+public class EmployeeDTO {
 
     private String pk;
-    private long id;
     private String name;
     private String surname;
     private String mail;
-    private String taxCode;
-    private String vatCode;
+    private boolean admin;
     private Set<PracticeDTO> practices;
 
     public String getPk() {
@@ -21,16 +19,6 @@ public class CustomerDTO {
         this.pk = pk;
     }
 
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-
     public String getName() {
         return name;
     }
@@ -38,7 +26,6 @@ public class CustomerDTO {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public String getSurname() {
         return surname;
@@ -48,7 +35,6 @@ public class CustomerDTO {
         this.surname = surname;
     }
 
-
     public String getMail() {
         return mail;
     }
@@ -57,22 +43,12 @@ public class CustomerDTO {
         this.mail = mail;
     }
 
-
-    public String getTaxCode() {
-        return taxCode;
+    public boolean isAdmin() {
+        return admin;
     }
 
-    public void setTaxCode(String taxCode) {
-        this.taxCode = taxCode;
-    }
-
-
-    public String getVatCode() {
-        return vatCode;
-    }
-
-    public void setVatCode(String vatCode) {
-        this.vatCode = vatCode;
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 
     public Set<PracticeDTO> getPractices() {
@@ -82,4 +58,5 @@ public class CustomerDTO {
     public void setPractices(Set<PracticeDTO> practices) {
         this.practices = practices;
     }
+
 }
