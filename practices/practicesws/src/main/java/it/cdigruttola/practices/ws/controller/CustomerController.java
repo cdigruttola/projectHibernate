@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "customers")
@@ -15,6 +16,11 @@ public class CustomerController {
 
     @Resource(name = "customerFacade")
     private CustomerFacade customerFacade;
+
+    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<CustomerDTO> getAllCustomers() {
+        return customerFacade.getAllCustomers();
+    }
 
     @RequestMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public CustomerDTO getCustomer(@PathVariable String id) {

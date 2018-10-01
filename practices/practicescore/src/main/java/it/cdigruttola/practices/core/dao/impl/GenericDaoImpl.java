@@ -6,6 +6,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Required;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import java.util.List;
+
 public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 
     private SessionFactory sessionFactory;
@@ -45,6 +50,17 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
         T model = (T) session.get(clazz, pk);
         closeSession(session);
         return model;
+    }
+
+    public List<T> getAllInstance(Class<T> clazz) {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(clazz);
+        Root<T> root = query.from(clazz);
+        query.select(root);
+        List<T> list = session.createQuery(query).getResultList();
+        closeSession(session);
+        return list;
     }
 
     Session getSession() {

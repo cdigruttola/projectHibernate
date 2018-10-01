@@ -12,6 +12,10 @@
 
     <bean id="customerDao" class="it.cdigruttola.practices.core.dao.impl.CustomerDaoImpl" parent="genericDao"/>
 
+    <bean id="practiceDao" class="it.cdigruttola.practices.core.dao.impl.PracticeDaoImpl" parent="genericDao"/>
+
+    <bean id="employeeDao" class="it.cdigruttola.practices.core.dao.impl.EmployeeDaoImpl" parent="genericDao"/>
+
     <bean id="customerService" class="it.cdigruttola.practices.core.service.impl.CustomerServiceImpl">
         <property name="customerDao" ref="customerDao"/>
     </bean>
