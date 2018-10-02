@@ -24,4 +24,8 @@
         <property name="customerDao" ref="customerDao"/>
     </bean>
 
+    <bean id="practiceService" class="it.cdigruttola.practices.core.service.impl.PracticeServiceImpl">
+        <property name="practiceDao" ref="practiceDao"/>
+    </bean>
+
 </beans>

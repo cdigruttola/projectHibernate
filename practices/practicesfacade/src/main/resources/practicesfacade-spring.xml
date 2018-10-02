@@ -6,11 +6,18 @@
 
     <import resource="classpath:practicescore-spring.xml"/>
 
-    <bean class="org.modelmapper.ModelMapper" id="modelMapper" />
+    <bean class="org.modelmapper.ModelMapper" id="modelMapper"/>
 
     <bean id="customerFacade" class="it.cdigruttola.practices.facade.impl.CustomerFacadeImpl">
         <property name="customerService" ref="customerService"/>
-        <property name="modelMapper" ref="modelMapper" />
+        <property name="modelMapper" ref="modelMapper"/>
+        <property name="modelService" ref="modelService"/>
+    </bean>
+
+    <bean id="practiceFacade" class="it.cdigruttola.practices.facade.impl.PracticeFacadeImpl">
+        <property name="practiceService" ref="practiceService"/>
+        <property name="modelMapper" ref="modelMapper"/>
+        <property name="modelService" ref="modelService"/>
     </bean>
 
 </beans>

@@ -1,6 +1,7 @@
 package it.cdigruttola.practices.facade.impl;
 
 import it.cdigruttola.practices.core.service.CustomerService;
+import it.cdigruttola.practices.core.service.ModelService;
 import it.cdigruttola.practices.dto.CustomerDTO;
 import it.cdigruttola.practices.facade.CustomerFacade;
 import it.cdigruttola.practices.model.CustomerModel;
@@ -16,6 +17,7 @@ public class CustomerFacadeImpl implements CustomerFacade {
 
     private CustomerService customerService;
     private ModelMapper modelMapper;
+    private ModelService modelService;
 
     public CustomerDTO getCustomerById(String id) {
         CustomerModel customer = customerService.getCustomerByPk(id);
@@ -35,6 +37,15 @@ public class CustomerFacadeImpl implements CustomerFacade {
         return null;
     }
 
+    public boolean createCustomer(CustomerDTO customer) {
+        if (customer != null) {
+            CustomerModel customerModel = modelMapper.map(customer, CustomerModel.class);
+            modelService.save(customerModel);
+            return true;
+        }
+        return false;
+    }
+
     public CustomerService getCustomerService() {
         return customerService;
     }
@@ -51,5 +62,14 @@ public class CustomerFacadeImpl implements CustomerFacade {
     @Required
     public void setModelMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
+    }
+
+    public ModelService getModelService() {
+        return modelService;
+    }
+
+    @Required
+    public void setModelService(ModelService modelService) {
+        this.modelService = modelService;
     }
 }

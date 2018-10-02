@@ -9,4 +9,6 @@ public interface CustomerFacade {
     public CustomerDTO getCustomerById(String id);
 
     public List<CustomerDTO> getAllCustomers();
+
+    public boolean createCustomer(CustomerDTO customer);
 }
