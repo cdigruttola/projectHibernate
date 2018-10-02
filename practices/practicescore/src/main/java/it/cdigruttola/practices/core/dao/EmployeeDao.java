@@ -8,5 +8,5 @@ public interface EmployeeDao extends GenericDao<EmployeeModel> {
 
     EmployeeModel findByPk(String pk);
 
-    List<EmployeeModel> getAllEmployees();
+    List<EmployeeModel> findAllEmployees();
 }

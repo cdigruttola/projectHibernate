@@ -8,5 +8,5 @@ public interface PracticeDao extends GenericDao<PracticeModel> {
 
     public PracticeModel findByPk(String pk);
 
-    List<PracticeModel> getAllPractices();
+    List<PracticeModel> findAllPractices();
 }

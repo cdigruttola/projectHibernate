@@ -6,9 +6,8 @@ import it.cdigruttola.practices.enumeration.Type;
 import java.sql.Date;
 import java.util.Set;
 
-public class PracticeModel {
+public class PracticeModel extends ItemModel {
 
-    private String pk;
     private String id;
     private String object;
     private Date dueDate;
@@ -21,14 +20,6 @@ public class PracticeModel {
     private Type type;
     private Set<ActivityModel> activities;
     private Set<FileModel> files;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
 
     public String getId() {
         return id;

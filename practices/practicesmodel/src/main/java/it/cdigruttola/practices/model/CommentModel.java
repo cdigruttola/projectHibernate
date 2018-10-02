@@ -2,21 +2,12 @@ package it.cdigruttola.practices.model;
 
 import java.sql.Date;
 
-public class CommentModel {
+public class CommentModel extends ItemModel {
 
-    private String pk;
     private Date date;
     private String text;
     private ActivityModel activity;
     private EmployeeModel employee;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
 
     public Date getDate() {
         return date;

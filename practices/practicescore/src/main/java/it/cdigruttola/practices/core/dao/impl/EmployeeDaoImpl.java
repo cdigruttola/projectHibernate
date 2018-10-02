@@ -11,7 +11,7 @@ public class EmployeeDaoImpl extends GenericDaoImpl<EmployeeModel> implements Em
         return super.findByPk(EmployeeModel.class, pk);
     }
 
-    public List<EmployeeModel> getAllEmployees() {
-        return super.getAllInstance(EmployeeModel.class);
+    public List<EmployeeModel> findAllEmployees() {
+        return super.findAllInstance(EmployeeModel.class);
     }
 }

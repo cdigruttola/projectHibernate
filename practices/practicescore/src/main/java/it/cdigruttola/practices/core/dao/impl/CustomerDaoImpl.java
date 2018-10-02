@@ -11,7 +11,7 @@ public class CustomerDaoImpl extends GenericDaoImpl<CustomerModel> implements Cu
         return super.findByPk(CustomerModel.class, pk);
     }
 
-    public List<CustomerModel> getAllCustomers() {
-        return super.getAllInstance(CustomerModel.class);
+    public List<CustomerModel> findAllCustomers() {
+        return super.findAllInstance(CustomerModel.class);
     }
 }

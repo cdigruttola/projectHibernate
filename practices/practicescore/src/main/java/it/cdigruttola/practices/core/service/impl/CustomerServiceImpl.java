@@ -16,7 +16,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public List<CustomerModel> getAllCustomers() {
-        return customerDao.getAllCustomers();
+        return customerDao.findAllCustomers();
     }
 
     public CustomerDao getCustomerDao() {

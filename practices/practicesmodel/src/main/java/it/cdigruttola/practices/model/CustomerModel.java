@@ -2,9 +2,8 @@ package it.cdigruttola.practices.model;
 
 import java.util.Set;
 
-public class CustomerModel {
+public class CustomerModel extends ItemModel {
 
-    private String pk;
     private long id;
     private String name;
     private String surname;
@@ -12,15 +11,6 @@ public class CustomerModel {
     private String taxCode;
     private String vatCode;
     private Set<PracticeModel> practices;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
-
 
     public long getId() {
         return id;

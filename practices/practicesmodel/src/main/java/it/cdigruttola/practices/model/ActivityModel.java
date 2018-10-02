@@ -3,9 +3,8 @@ package it.cdigruttola.practices.model;
 import java.sql.Date;
 import java.util.Set;
 
-public class ActivityModel {
+public class ActivityModel extends ItemModel {
 
-    private String pk;
     private String description;
     private PracticeModel practice;
     private EmployeeModel employee;
@@ -16,14 +15,6 @@ public class ActivityModel {
     private long workingHours;
     private long km;
     private Set<CommentModel> comments;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
 
     public String getDescription() {
         return description;

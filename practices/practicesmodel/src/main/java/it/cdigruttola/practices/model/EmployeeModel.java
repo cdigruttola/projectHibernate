@@ -2,22 +2,13 @@ package it.cdigruttola.practices.model;
 
 import java.util.Set;
 
-public class EmployeeModel {
+public class EmployeeModel extends ItemModel {
 
-    private String pk;
     private String name;
     private String surname;
     private String mail;
     private boolean admin;
     private Set<PracticeModel> practices;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
 
     public String getName() {
         return name;

@@ -11,7 +11,7 @@ public class PracticeDaoImpl extends GenericDaoImpl<PracticeModel> implements Pr
         return super.findByPk(PracticeModel.class, pk);
     }
 
-    public List<PracticeModel> getAllPractices() {
-        return super.getAllInstance(PracticeModel.class);
+    public List<PracticeModel> findAllPractices() {
+        return super.findAllInstance(PracticeModel.class);
     }
 }
