@@ -3,9 +3,8 @@ package it.cdigruttola.practices.dto;
 import java.sql.Date;
 import java.util.Set;
 
-public class ActivityDTO {
+public class ActivityDTO extends ItemDTO {
 
-    private String pk;
     private String description;
     private PracticeDTO practice;
     private EmployeeDTO employee;
@@ -16,14 +15,6 @@ public class ActivityDTO {
     private long workingHours;
     private long km;
     private Set<CommentDTO> comments;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
 
     public String getDescription() {
         return description;

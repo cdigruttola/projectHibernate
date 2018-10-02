@@ -2,21 +2,12 @@ package it.cdigruttola.practices.dto;
 
 import java.sql.Date;
 
-public class CommentDTO {
+public class CommentDTO extends ItemDTO {
 
-    private String pk;
     private Date date;
     private String text;
     private ActivityDTO activity;
     private EmployeeDTO employee;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
 
     public Date getDate() {
         return date;

@@ -6,9 +6,8 @@ import it.cdigruttola.practices.enumeration.Type;
 import java.sql.Date;
 import java.util.Set;
 
-public class PracticeDTO {
+public class PracticeDTO extends ItemDTO {
 
-    private String pk;
     private String id;
     private String object;
     private Date dueDate;
@@ -21,14 +20,6 @@ public class PracticeDTO {
     private Type type;
     private Set<ActivityDTO> activities;
     private Set<FileDTO> files;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
 
     public String getId() {
         return id;

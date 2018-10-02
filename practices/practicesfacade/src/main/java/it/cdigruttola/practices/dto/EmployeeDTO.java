@@ -2,22 +2,13 @@ package it.cdigruttola.practices.dto;
 
 import java.util.Set;
 
-public class EmployeeDTO {
+public class EmployeeDTO extends ItemDTO {
 
-    private String pk;
     private String name;
     private String surname;
     private String mail;
     private boolean admin;
     private Set<PracticeDTO> practices;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
 
     public String getName() {
         return name;

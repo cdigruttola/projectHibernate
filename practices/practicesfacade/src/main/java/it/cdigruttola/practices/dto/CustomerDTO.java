@@ -2,9 +2,8 @@ package it.cdigruttola.practices.dto;
 
 import java.util.Set;
 
-public class CustomerDTO {
+public class CustomerDTO extends ItemDTO {
 
-    private String pk;
     private long id;
     private String name;
     private String surname;
@@ -12,15 +11,6 @@ public class CustomerDTO {
     private String taxCode;
     private String vatCode;
     private Set<PracticeDTO> practices;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
-
 
     public long getId() {
         return id;

@@ -4,7 +4,6 @@ import it.cdigruttola.practices.core.dao.GenericDao;
 import it.cdigruttola.practices.model.ItemModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Required;
 
 import javax.persistence.criteria.CriteriaBuilder;

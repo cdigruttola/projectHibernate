@@ -1,22 +1,13 @@
 package it.cdigruttola.practices.dto;
 
-public class FileDTO {
+public class FileDTO extends ItemDTO {
 
-    private String pk;
     private String name;
     private String url;
     private PracticeDTO practice;
     private EmployeeDTO employee;
 
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
-
-    public String getName() {
+     public String getName() {
         return name;
     }
 
