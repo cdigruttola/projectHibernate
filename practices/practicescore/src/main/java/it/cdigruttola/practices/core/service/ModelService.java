@@ -11,4 +11,6 @@ public interface ModelService<T extends ItemModel> {
     public void delete(T model);
 
     public void refresh(T model);
+
+    public void persist(T model);
 }

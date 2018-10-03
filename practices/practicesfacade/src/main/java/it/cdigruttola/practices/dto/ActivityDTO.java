@@ -6,7 +6,6 @@ import java.util.Set;
 public class ActivityDTO extends ItemDTO {
 
     private String description;
-    private PracticeDTO practice;
     private EmployeeDTO employee;
     private Date dueDate;
     private Date openDate;
@@ -22,14 +21,6 @@ public class ActivityDTO extends ItemDTO {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public PracticeDTO getPractice() {
-        return practice;
-    }
-
-    public void setPractice(PracticeDTO practice) {
-        this.practice = practice;
     }
 
     public EmployeeDTO getEmployee() {

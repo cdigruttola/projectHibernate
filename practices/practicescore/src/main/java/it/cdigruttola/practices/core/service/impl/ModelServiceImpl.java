@@ -41,6 +41,14 @@ public class ModelServiceImpl<T extends ItemModel> implements ModelService<T> {
         closeSession(session);
     }
 
+    public void persist(T model) {
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
+        session.persist(model);
+        tx.commit();
+        closeSession(session);
+    }
+
     Session getSession() {
         return sessionFactory.openSession();
     }

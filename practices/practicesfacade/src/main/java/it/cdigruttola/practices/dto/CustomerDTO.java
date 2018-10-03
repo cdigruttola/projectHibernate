@@ -10,7 +10,6 @@ public class CustomerDTO extends ItemDTO {
     private String mail;
     private String taxCode;
     private String vatCode;
-    private Set<PracticeDTO> practices;
 
     public long getId() {
         return id;
@@ -20,7 +19,6 @@ public class CustomerDTO extends ItemDTO {
         this.id = id;
     }
 
-
     public String getName() {
         return name;
     }
@@ -28,7 +26,6 @@ public class CustomerDTO extends ItemDTO {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public String getSurname() {
         return surname;
@@ -38,7 +35,6 @@ public class CustomerDTO extends ItemDTO {
         this.surname = surname;
     }
 
-
     public String getMail() {
         return mail;
     }
@@ -46,7 +42,6 @@ public class CustomerDTO extends ItemDTO {
     public void setMail(String mail) {
         this.mail = mail;
     }
-
 
     public String getTaxCode() {
         return taxCode;
@@ -56,7 +51,6 @@ public class CustomerDTO extends ItemDTO {
         this.taxCode = taxCode;
     }
 
-
     public String getVatCode() {
         return vatCode;
     }
@@ -65,11 +59,4 @@ public class CustomerDTO extends ItemDTO {
         this.vatCode = vatCode;
     }
 
-    public Set<PracticeDTO> getPractices() {
-        return practices;
-    }
-
-    public void setPractices(Set<PracticeDTO> practices) {
-        this.practices = practices;
-    }
 }

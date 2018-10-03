@@ -8,8 +8,8 @@
             <generator class="uuid"/>
         </id>
         <property name="description" type="java.lang.String"/>
-        <many-to-one name="practice" class="it.cdigruttola.practices.model.PracticeModel"/>
-        <one-to-one name="employee" class="it.cdigruttola.practices.model.EmployeeModel"/>
+        <many-to-one name="practice" class="it.cdigruttola.practices.model.PracticeModel" lazy="false"/>
+        <one-to-one name="employee" class="it.cdigruttola.practices.model.EmployeeModel" lazy="false"/>
         <property name="openDate" type="java.sql.Date" column="open_date"/>
         <property name="dueDate" type="java.sql.Date" column="due_date"/>
         <property name="endDate" type="java.sql.Date" column="end_date"/>

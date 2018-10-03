@@ -6,7 +6,6 @@ public class CommentDTO extends ItemDTO {
 
     private Date date;
     private String text;
-    private ActivityDTO activity;
     private EmployeeDTO employee;
 
     public Date getDate() {
@@ -23,14 +22,6 @@ public class CommentDTO extends ItemDTO {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public ActivityDTO getActivity() {
-        return activity;
-    }
-
-    public void setActivity(ActivityDTO activity) {
-        this.activity = activity;
     }
 
     public EmployeeDTO getEmployee() {

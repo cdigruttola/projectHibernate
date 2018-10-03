@@ -1,14 +1,11 @@
 package it.cdigruttola.practices.dto;
 
-import java.util.Set;
-
 public class EmployeeDTO extends ItemDTO {
 
     private String name;
     private String surname;
     private String mail;
     private boolean admin;
-    private Set<PracticeDTO> practices;
 
     public String getName() {
         return name;
@@ -40,14 +37,6 @@ public class EmployeeDTO extends ItemDTO {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
-    }
-
-    public Set<PracticeDTO> getPractices() {
-        return practices;
-    }
-
-    public void setPractices(Set<PracticeDTO> practices) {
-        this.practices = practices;
     }
 
 }

@@ -20,7 +20,6 @@ public class CustomerModel extends ItemModel {
         this.id = id;
     }
 
-
     public String getName() {
         return name;
     }
@@ -28,7 +27,6 @@ public class CustomerModel extends ItemModel {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public String getSurname() {
         return surname;
@@ -38,7 +36,6 @@ public class CustomerModel extends ItemModel {
         this.surname = surname;
     }
 
-
     public String getMail() {
         return mail;
     }
@@ -47,7 +44,6 @@ public class CustomerModel extends ItemModel {
         this.mail = mail;
     }
 
-
     public String getTaxCode() {
         return taxCode;
     }
@@ -55,7 +51,6 @@ public class CustomerModel extends ItemModel {
     public void setTaxCode(String taxCode) {
         this.taxCode = taxCode;
     }
-
 
     public String getVatCode() {
         return vatCode;

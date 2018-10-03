@@ -9,7 +9,7 @@
         </id>
         <property name="date" type="java.sql.Date"/>
         <property name="text" type="java.lang.String"/>
-        <many-to-one name="activity" class="it.cdigruttola.practices.model.ActivityModel"/>
-        <one-to-one name="employee" class="it.cdigruttola.practices.model.EmployeeModel"/>
+        <many-to-one name="activity" class="it.cdigruttola.practices.model.ActivityModel" lazy="false"/>
+        <one-to-one name="employee" class="it.cdigruttola.practices.model.EmployeeModel" lazy="false"/>
     </class>
 </hibernate-mapping>

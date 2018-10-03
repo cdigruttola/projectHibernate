@@ -13,8 +13,8 @@
         <property name="openDate" type="java.sql.Date" column="open_date"/>
         <property name="dueDate" type="java.sql.Date" column="due_date"/>
         <property name="closureDate" type="java.sql.Date" column="closure_date"/>
-        <many-to-one name="customer" class="it.cdigruttola.practices.model.CustomerModel"/>
-        <many-to-one name="employee" class="it.cdigruttola.practices.model.EmployeeModel"/>
+        <many-to-one name="customer" class="it.cdigruttola.practices.model.CustomerModel" lazy="false"/>
+        <many-to-one name="employee" class="it.cdigruttola.practices.model.EmployeeModel" lazy="false"/>
         <property name="state">
             <type name="org.hibernate.type.EnumType">
                 <param name="enumClass">it.cdigruttola.practices.enumeration.State</param>
