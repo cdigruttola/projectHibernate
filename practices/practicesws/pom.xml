@@ -38,6 +38,11 @@
             <artifactId>jackson-databind</artifactId>
             <version>RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>RELEASE</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>practices</finalName>
