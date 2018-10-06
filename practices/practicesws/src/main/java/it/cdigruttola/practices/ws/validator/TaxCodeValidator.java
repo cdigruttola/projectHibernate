@@ -22,13 +22,13 @@ public class TaxCodeValidator implements ConstraintValidator<TaxCode, String> {
                 if (Character.isLetter(c)) {
                     sum += (c - 65);
                 } else {
-                    sum += (c - 48);
+                    sum += Character.getNumericValue(c);
                 }
             } else {
                 if (Character.isLetter(c)) {
                     sum += oddMatching[c - 65];
                 } else {
-                    sum += oddMatching[c - 48];
+                    sum += oddMatching[Character.getNumericValue(c)];
                 }
             }
         }
