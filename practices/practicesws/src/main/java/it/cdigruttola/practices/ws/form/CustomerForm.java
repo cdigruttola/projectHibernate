@@ -1,6 +1,7 @@
 package it.cdigruttola.practices.ws.form;
 
 import it.cdigruttola.practices.ws.constraint.TaxCode;
+import it.cdigruttola.practices.ws.constraint.VatCode;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -24,6 +25,8 @@ public class CustomerForm {
     @TaxCode
     private String taxCode;
     @Size(min = 11, max = 11)
+    @Pattern(regexp = "^[0-9]{11}$")
+    @VatCode
     private String vatCode;
 
     public long getId() {
