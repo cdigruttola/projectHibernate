@@ -1,7 +1,7 @@
 package it.cdigruttola.practices.facade.impl;
 
 import it.cdigruttola.practices.core.service.CustomerService;
-import it.cdigruttola.practices.dto.CustomerDTO;
+import it.cdigruttola.practices.facade.dto.CustomerDTO;
 import it.cdigruttola.practices.facade.CustomerFacade;
 import it.cdigruttola.practices.model.CustomerModel;
 import org.apache.commons.collections4.CollectionUtils;

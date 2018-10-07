@@ -1,4 +1,4 @@
-package it.cdigruttola.practices.dto;
+package it.cdigruttola.practices.facade.dto;
 
 import it.cdigruttola.practices.enumeration.State;
 import it.cdigruttola.practices.enumeration.Type;

@@ -1,6 +1,6 @@
 package it.cdigruttola.practices.ws.controller;
 
-import it.cdigruttola.practices.dto.CustomerDTO;
+import it.cdigruttola.practices.facade.dto.CustomerDTO;
 import it.cdigruttola.practices.facade.CustomerFacade;
 import it.cdigruttola.practices.ws.form.CustomerForm;
 import org.modelmapper.ModelMapper;

@@ -1,4 +1,4 @@
-package it.cdigruttola.practices.dto;
+package it.cdigruttola.practices.facade.dto;
 
 import java.sql.Date;
 

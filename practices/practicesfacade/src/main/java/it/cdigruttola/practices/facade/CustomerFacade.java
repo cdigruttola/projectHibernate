@@ -1,7 +1,6 @@
 package it.cdigruttola.practices.facade;
 
-import it.cdigruttola.practices.dto.CustomerDTO;
-import org.springframework.stereotype.Component;
+import it.cdigruttola.practices.facade.dto.CustomerDTO;
 
 import java.util.List;
 
