@@ -39,7 +39,7 @@ public class CustomerFacadeImpl implements CustomerFacade {
         return null;
     }
 
-    public boolean createCustomer(CustomerDTO customer) {
+    public boolean createOrUpdateCustomer(CustomerDTO customer) {
         if (customer != null) {
             CustomerModel customerModel = modelMapper.map(customer, CustomerModel.class);
             customerService.save(customerModel);

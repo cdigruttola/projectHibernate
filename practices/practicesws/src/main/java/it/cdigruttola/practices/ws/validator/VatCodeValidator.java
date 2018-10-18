@@ -1,6 +1,7 @@
 package it.cdigruttola.practices.ws.validator;
 
 import it.cdigruttola.practices.ws.constraint.VatCode;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -8,6 +9,9 @@ import javax.validation.ConstraintValidatorContext;
 public class VatCodeValidator implements ConstraintValidator<VatCode, String> {
 
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
+        if (StringUtils.isBlank(s)) {
+            return true;
+        }
         int sum = 0;
         for (int i = 0; i < s.length(); i++) {
             int c = Character.getNumericValue(s.charAt(i));

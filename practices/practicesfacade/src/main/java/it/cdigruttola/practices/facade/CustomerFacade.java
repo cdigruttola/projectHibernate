@@ -10,5 +10,5 @@ public interface CustomerFacade {
 
     public List<CustomerDTO> getAllCustomers();
 
-    public boolean createCustomer(CustomerDTO customer);
+    public boolean createOrUpdateCustomer(CustomerDTO customer);
 }

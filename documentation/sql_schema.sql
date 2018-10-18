@@ -26,14 +26,6 @@ CREATE TABLE IF NOT EXISTS Employees (
     admin BOOLEAN
 );
 
-DROP TABLE IF EXISTS EnumerationValues;
-
-CREATE TABLE IF NOT EXISTS EnumerationValues (
-	pk VARCHAR(32) NOT NULL PRIMARY KEY,
-    type VARCHAR(32) NOT NULL,
-    code VARCHAR(32) NOT NULL
-);
-
 DROP TABLE IF EXISTS Practices;
 
 CREATE TABLE IF NOT EXISTS Practices (
@@ -51,11 +43,7 @@ CREATE TABLE IF NOT EXISTS Practices (
     CONSTRAINT fk_customer_p FOREIGN KEY (customer)
         REFERENCES Customers(pk),
     CONSTRAINT fk_employee_p FOREIGN KEY (employee)
-		REFERENCES Employees(pk),
-	CONSTRAINT fk_state FOREIGN KEY (state)
-		REFERENCES EnumerationValues(pk),
-	CONSTRAINT fk_type FOREIGN KEY (type)
-		REFERENCES EnumerationValues(pk)	
+		REFERENCES Employees(pk)
 );
 
 DROP TABLE IF EXISTS Activities;

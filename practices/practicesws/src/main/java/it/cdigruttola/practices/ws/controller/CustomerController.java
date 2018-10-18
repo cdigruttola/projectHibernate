@@ -42,7 +42,19 @@ public class CustomerController {
             return bindingResult.getFieldErrors();
         }
         CustomerDTO customerDTO = modelMapper.map(customerForm, CustomerDTO.class);
-        if (customerFacade.createCustomer(customerDTO)) {
+        if (customerFacade.createOrUpdateCustomer(customerDTO)) {
+            return null;
+        }
+        return null;
+    }
+
+    @RequestMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<FieldError> updateCustomer(@RequestBody @Valid CustomerForm customerForm, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return bindingResult.getFieldErrors();
+        }
+        CustomerDTO customerDTO = modelMapper.map(customerForm, CustomerDTO.class);
+        if (customerFacade.createOrUpdateCustomer(customerDTO)) {
             return null;
         }
         return null;
