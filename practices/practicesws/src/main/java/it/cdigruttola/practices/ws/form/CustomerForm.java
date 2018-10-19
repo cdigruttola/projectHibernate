@@ -8,9 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-public class CustomerForm {
-
-    private String pk;
+public class CustomerForm extends ItemForm {
 
     private long id;
 
@@ -34,14 +32,6 @@ public class CustomerForm {
     @Pattern(regexp = "^[0-9]{11}$")
     @VatCode
     private String vatCode;
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
-    }
 
     public long getId() {
         return id;

@@ -12,7 +12,7 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = VatCodeValidator.class)
 public @interface VatCode {
 
-    String message() default "{VatCode.message}";
+    String message() default "{it.cdigruttola.practices.ws.constraint.VatCode.message}";
 
     Class<?>[] groups() default {};
 

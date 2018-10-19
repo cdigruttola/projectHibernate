@@ -12,7 +12,7 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = TaxCodeValidator.class)
 public @interface TaxCode {
 
-    String message() default "{TaxCode.message}";
+    String message() default "{it.cdigruttola.practices.ws.constraint.TaxCode.message}";
 
     Class<?>[] groups() default {};
 

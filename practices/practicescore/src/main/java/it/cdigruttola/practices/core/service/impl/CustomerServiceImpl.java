@@ -6,7 +6,9 @@ import it.cdigruttola.practices.model.CustomerModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Optional;
 
 @Component(value = "customerService")
 public class CustomerServiceImpl implements CustomerService {
@@ -15,7 +17,12 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
 
     public CustomerModel getCustomerByPk(String pk) {
-        return customerRepository.findById(pk).get();
+        Optional<CustomerModel> customers = customerRepository.findById(pk);
+        if (customers.isPresent()) {
+            return customers.get();
+        } else {
+            throw new EntityNotFoundException("it.cdigruttola.practices.ws.EntityNotFoundException.message");
+        }
     }
 
     public List<CustomerModel> getAllCustomers() {
