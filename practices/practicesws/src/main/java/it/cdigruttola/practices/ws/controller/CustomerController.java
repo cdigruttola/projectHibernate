@@ -1,7 +1,7 @@
 package it.cdigruttola.practices.ws.controller;
 
-import it.cdigruttola.practices.facade.dto.CustomerDTO;
 import it.cdigruttola.practices.facade.CustomerFacade;
+import it.cdigruttola.practices.facade.dto.CustomerDTO;
 import it.cdigruttola.practices.facade.dto.ErrorDTO;
 import it.cdigruttola.practices.ws.form.CustomerForm;
 import org.modelmapper.ModelMapper;
@@ -11,11 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.lang.reflect.Type;
@@ -31,34 +27,40 @@ public class CustomerController {
     @Autowired
     private ModelMapper modelMapper;
 
-    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<CustomerDTO> getAllCustomers() {
         return customerFacade.getAllCustomers();
     }
 
-    @RequestMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public CustomerDTO getCustomer(@PathVariable String id) {
-        return customerFacade.getCustomerById(id);
+    @GetMapping(value = "/{mail}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public CustomerDTO getCustomerByMail(@PathVariable String mail) {
+        return customerFacade.getCustomerByMail(mail);
     }
 
-    @RequestMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> createCustomer(@RequestBody @Valid CustomerForm customerForm, BindingResult bindingResult) {
+    @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<? extends Object> createCustomer(@RequestBody @Valid CustomerForm customerForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             Type targetListType = new TypeToken<List<ErrorDTO>>() {
             }.getType();
             List<ErrorDTO> errors = modelMapper.map(bindingResult.getFieldErrors(), targetListType);
-            return new ResponseEntity<Object>(errors, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<List<ErrorDTO>>(errors, HttpStatus.BAD_REQUEST);
         }
         CustomerDTO customerDTO = modelMapper.map(customerForm, CustomerDTO.class);
         if (customerFacade.createOrUpdateCustomer(customerDTO)) {
-            return null;
+            return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
         }
-        return null;
+        return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
     }
 
-    @RequestMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> updateCustomer(@RequestBody @Valid CustomerForm customerForm, BindingResult bindingResult) {
+    @PostMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<? extends Object> updateCustomer(@RequestBody @Valid CustomerForm customerForm, BindingResult bindingResult) {
         return createCustomer(customerForm, bindingResult);
+    }
+
+    @DeleteMapping(value = "/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<? extends Object> deleteCustomer(@PathVariable String id) {
+        customerFacade.delete(id);
+        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 
 }

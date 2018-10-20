@@ -21,20 +21,20 @@ public class CustomerFacadeImpl implements CustomerFacade {
     @Autowired
     private ModelMapper modelMapper;
 
-    public CustomerDTO getCustomerById(String id) {
-        CustomerModel customer = customerService.getCustomerByPk(id);
-        if (customer != null) {
-            return modelMapper.map(customer, CustomerDTO.class);
-        }
-        return null;
-    }
-
     public List<CustomerDTO> getAllCustomers() {
         Type targetListType = new TypeToken<List<CustomerDTO>>() {
         }.getType();
         List<CustomerModel> customers = customerService.getAllCustomers();
         if (CollectionUtils.isNotEmpty(customers)) {
             return modelMapper.map(customers, targetListType);
+        }
+        return null;
+    }
+
+    public CustomerDTO getCustomerByMail(String mail) {
+        CustomerModel customer = customerService.getCustomerByMail(mail);
+        if (customer != null) {
+            return modelMapper.map(customer, CustomerDTO.class);
         }
         return null;
     }
@@ -48,4 +48,8 @@ public class CustomerFacadeImpl implements CustomerFacade {
         return false;
     }
 
+    @Override
+    public void delete(String pk) {
+        customerService.deleteByPk(pk);
+    }
 }

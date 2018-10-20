@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface CustomerFacade {
 
-    public CustomerDTO getCustomerById(String id);
+    List<CustomerDTO> getAllCustomers();
 
-    public List<CustomerDTO> getAllCustomers();
+    CustomerDTO getCustomerByMail(String mail);
 
-    public boolean createOrUpdateCustomer(CustomerDTO customer);
+    boolean createOrUpdateCustomer(CustomerDTO customer);
+
+    void delete(String pk);
 }

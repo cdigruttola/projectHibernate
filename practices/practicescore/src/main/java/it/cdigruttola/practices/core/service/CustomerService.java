@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface CustomerService {
 
-    public CustomerModel getCustomerByPk(String pk);
+    List<CustomerModel> getAllCustomers();
 
-    public List<CustomerModel> getAllCustomers();
+    CustomerModel getCustomerByMail(String mail);
 
-    public CustomerModel save(CustomerModel customer);
+    CustomerModel save(CustomerModel customer);
+
+    void deleteByPk(String pk);
 }
