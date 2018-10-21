@@ -10,6 +10,10 @@ public interface CustomerFacade {
 
     CustomerDTO getCustomerByMail(String mail);
 
+    CustomerDTO getCustomerByCode(String code);
+
+    List<CustomerDTO> getCustomersBySurnameOrName(String surname, String name);
+
     boolean createOrUpdateCustomer(CustomerDTO customer);
 
     void delete(String pk);

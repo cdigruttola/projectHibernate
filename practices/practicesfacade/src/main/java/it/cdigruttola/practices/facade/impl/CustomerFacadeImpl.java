@@ -16,17 +16,18 @@ import java.util.List;
 @Component(value = "customerFacade")
 public class CustomerFacadeImpl implements CustomerFacade {
 
+    private static final Type CUSTOMER_LIST_TYPE = new TypeToken<List<CustomerDTO>>() {
+    }.getType();
+
     @Autowired
     private CustomerService customerService;
     @Autowired
     private ModelMapper modelMapper;
 
     public List<CustomerDTO> getAllCustomers() {
-        Type targetListType = new TypeToken<List<CustomerDTO>>() {
-        }.getType();
         List<CustomerModel> customers = customerService.getAllCustomers();
         if (CollectionUtils.isNotEmpty(customers)) {
-            return modelMapper.map(customers, targetListType);
+            return modelMapper.map(customers, CUSTOMER_LIST_TYPE);
         }
         return null;
     }
@@ -35,6 +36,24 @@ public class CustomerFacadeImpl implements CustomerFacade {
         CustomerModel customer = customerService.getCustomerByMail(mail);
         if (customer != null) {
             return modelMapper.map(customer, CustomerDTO.class);
+        }
+        return null;
+    }
+
+    @Override
+    public CustomerDTO getCustomerByCode(String code) {
+        CustomerModel customer = customerService.getCustomerByCode(code);
+        if (customer != null) {
+            return modelMapper.map(customer, CustomerDTO.class);
+        }
+        return null;
+    }
+
+    @Override
+    public List<CustomerDTO> getCustomersBySurnameOrName(String surname, String name) {
+        List<CustomerModel> customers = customerService.getCustomersBySurnameOrName(surname, name);
+        if (CollectionUtils.isNotEmpty(customers)) {
+            return modelMapper.map(customers, CUSTOMER_LIST_TYPE);
         }
         return null;
     }

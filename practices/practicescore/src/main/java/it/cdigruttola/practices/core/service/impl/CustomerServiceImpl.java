@@ -23,9 +23,35 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerModel getCustomerByMail(String mail) {
-        List<CustomerModel> customers = customerRepository.findByMail(mail);
+        Optional<CustomerModel> customers = customerRepository.findByMail(mail);
+        if (customers.isPresent()) {
+            return customers.get();
+        } else {
+            throw new EntityNotFoundException();
+        }
+    }
+
+    @Override
+    public CustomerModel getCustomerByCode(String code) {
+        long codeLong;
+        try {
+            codeLong = Long.valueOf(code);
+        } catch (NumberFormatException ex) {
+            throw new IllegalArgumentException(ex.getMessage());
+        }
+        Optional<CustomerModel> customers = customerRepository.findByCode(codeLong);
+        if (customers.isPresent()) {
+            return customers.get();
+        } else {
+            throw new EntityNotFoundException();
+        }
+    }
+
+    @Override
+    public List<CustomerModel> getCustomersBySurnameOrName(String surname, String name) {
+        List<CustomerModel> customers = customerRepository.findBySurnameOrName(surname, name);
         if (CollectionUtils.isNotEmpty(customers)) {
-            return customers.get(0);
+            return customers;
         } else {
             throw new EntityNotFoundException();
         }

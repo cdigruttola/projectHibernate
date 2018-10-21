@@ -7,8 +7,8 @@ import java.util.Set;
 @Table(name = "customers")
 public class CustomerModel extends ItemModel {
 
-    @Column(unique = true, nullable = false)
-    private long id;
+    @Column(name = "id", unique = true, nullable = false)
+    private long code;
     @Column
     private String name;
     @Column
@@ -22,12 +22,12 @@ public class CustomerModel extends ItemModel {
     @OneToMany(mappedBy = "customer")
     private Set<PracticeModel> practices;
 
-    public long getId() {
-        return id;
+    public long getCode() {
+        return code;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setCode(long code) {
+        this.code = code;
     }
 
     public String getName() {

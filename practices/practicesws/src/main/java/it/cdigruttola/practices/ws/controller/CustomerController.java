@@ -32,9 +32,9 @@ public class CustomerController {
         return customerFacade.getAllCustomers();
     }
 
-    @GetMapping(value = "/{mail}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public CustomerDTO getCustomerByMail(@PathVariable String mail) {
-        return customerFacade.getCustomerByMail(mail);
+    @GetMapping(value = "/{code}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public CustomerDTO getCustomerByCode(@PathVariable String code) {
+        return customerFacade.getCustomerByCode(code);
     }
 
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)

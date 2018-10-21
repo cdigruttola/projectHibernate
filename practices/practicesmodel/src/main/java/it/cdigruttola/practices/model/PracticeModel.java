@@ -11,8 +11,8 @@ import java.util.Set;
 @Table(name = "practices")
 public class PracticeModel extends ItemModel {
 
-    @Column(unique = true, nullable = false)
-    private String id;
+    @Column(name = "id", unique = true, nullable = false)
+    private String code;
     @Column
     private String object;
     @Column(name = "due_date")
@@ -38,12 +38,12 @@ public class PracticeModel extends ItemModel {
     @OneToMany(mappedBy = "practice")
     private Set<FileModel> files;
 
-    public String getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getObject() {

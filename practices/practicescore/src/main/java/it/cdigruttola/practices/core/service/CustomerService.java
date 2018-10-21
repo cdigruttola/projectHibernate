@@ -10,6 +10,10 @@ public interface CustomerService {
 
     CustomerModel getCustomerByMail(String mail);
 
+    CustomerModel getCustomerByCode(String code);
+
+    List<CustomerModel> getCustomersBySurnameOrName(String surname, String name);
+
     CustomerModel save(CustomerModel customer);
 
     void deleteByPk(String pk);
